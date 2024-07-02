@@ -34,7 +34,9 @@ def index():
     """
     basic route
     """
-    return render_template('4-index.html')
+    return render_template('4-index.html',
+                           home_title=_('Welcome to Holberton'),
+                           home_header=_('Hello world!'))
 
 
 if __name__ == '__main__':
