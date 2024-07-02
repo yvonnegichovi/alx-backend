@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+</head>
+<body>
+    <h1>{{ _('home_header') }}</h1>
+    <p>
+        {% if g.user %}
+            {% if get_locale() == 'fr' %}
+                {{ _('logged_in_as', username=g.user['name']) }}
+            {% else %}
+                {{ _('logged_in_as', username=g.user['name']) }}
+            {% endif %}
+        {% else %}
+            {% if get_locale() == 'fr' %}
+                {{ _('not_logged_in') }}
+            {% else %}
+                {{ _('not_logged_in') }}
+            {% endif %}
+        {% endif %}
+    </p>
+</body>
+</html>
