@@ -11,6 +11,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
+    """
+    basic route that renders a template
+    """
     return render_template('0-index.html')
 
 
