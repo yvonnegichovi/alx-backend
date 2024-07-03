@@ -34,9 +34,7 @@ def get_locale() -> str:
 def get_index() -> str:
     """The home/index page.
     """
-    return render_template('3-index.html',
-                           home_title=('Welcome to Holberton'),
-                           home_header=('Hello world!'))
+    return render_template('3-index.html')
 
 
 if __name__ == '__main__':
