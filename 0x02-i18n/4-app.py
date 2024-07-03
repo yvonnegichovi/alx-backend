@@ -4,7 +4,7 @@ This module forces a particular locale by passing the locale=fr parameter
 """
 
 from flask import Flask, render_template, request
-from flask_babel import Babel, 
+from flask_babel import Babel 
 
 
 class Config:
