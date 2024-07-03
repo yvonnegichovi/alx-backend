@@ -8,6 +8,7 @@ from flask_babel import Babel, gettex as _
 
 app = Flask(__name__)
 
+
 class Config:
     """
     This class contains langauges and timezone
@@ -16,9 +17,11 @@ class Config:
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
+
 app.config.from_object(Config)
 
 babel = Babel(app)
+
 
 @babel.localeselector
 def get_locale() -> str:
