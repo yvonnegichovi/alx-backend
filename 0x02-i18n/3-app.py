@@ -4,7 +4,7 @@ This module Use the _ or gettext function to parametrize your templates
 """
 
 from flask import Flask, render_template, request
-from flask_babel import Babel, gettex as _
+from flask_babel import Babel, gettext as _
 
 app = Flask(__name__)
 
