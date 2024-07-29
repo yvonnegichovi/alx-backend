@@ -18,6 +18,7 @@ users = {
 
 supported_locales = ['en', 'fr']
 
+
 def get_locale():
     """
     Check locale from URL parameters

@@ -4,18 +4,24 @@ This module Use the _ or gettext function to parametrize your templates
 """
 
 from flask import Flask, render_template, request
-from flask_babel import Babel, gettex as _
+from flask_babel import Babel, gettext as _
 
 app = Flask(__name__)
 
+
 class Config:
+    """
+    This class contains langauges and timezone
+    """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
+
 app.config.from_object(Config)
 
 babel = Babel(app)
+
 
 @babel.localeselector
 def get_locale() -> str:
@@ -25,12 +31,10 @@ def get_locale() -> str:
 
 
 @app.route('/')
-def get_index() -> str:
+def index() -> str:
     """The home/index page.
     """
-    return render_template('3-index.html',
-                           home_title=_('Welcome to Holberton'),
-                           home_header=_('Hello world!'))
+    return render_template('3-index.html')
 
 
 if __name__ == '__main__':

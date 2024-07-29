@@ -4,10 +4,13 @@ This module forces a particular locale by passing the locale=fr parameter
 """
 
 from flask import Flask, render_template, request
-from flask_babel import Babel, 
+from flask_babel import Babel, _ 
 
 
 class Config:
+    """
+    This class contains langauges and timezone
+    """
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
@@ -28,14 +31,13 @@ def get_locale():
         return locale
     return request.accept_language.best_match(app.config['LANGUAGES'])
 
+
 @app.route('/')
 def index():
     """
     basic route
     """
-    return render_template('4-index.html',
-                           home_title=_('Welcome to Holberton'),
-                           home_header=_('Hello world!'))
+    return render_template('4-index.html')
 
 
 if __name__ == '__main__':
